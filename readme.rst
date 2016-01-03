@@ -4,7 +4,7 @@ Dockerizing Aerospike
 
 :Author: Vladimir Kozlovski
 :Contact: inbox@vladkozlovski.com
-:Issues: https://github.com/vkozlovski/docker-aerospike/issues
+:Issues: https://github.com/vladkozlovski/docker-aerospike/issues
 :Docker image: https://hub.docker.com/r/vkozlovski/aerospike/
 :Description: Dockerfile to build a Aerospike container image which can be 
               linked to other containers.
