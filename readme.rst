@@ -9,7 +9,7 @@ Dockerizing Aerospike
 :Description: Dockerfile to build a Aerospike container image which can be 
               linked to other containers.
 
-:Release notes: http://www.aerospike.com/download/server/
+:Release notes: http://www.aerospike.com/download/server/notes.html
 :Official image: https://hub.docker.com/_/aerospike/
 :Official GitHub: https://github.com/aerospike/aerospike-server
 
