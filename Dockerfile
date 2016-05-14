@@ -2,8 +2,9 @@ FROM debian:7
 MAINTAINER Vladimir Kozlovski <inbox@vladkozlovski.com>
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV AEROSPIKE_VERSION 3.7.4.1
-ENV AEROSPIKE_SHA256 72700fd84a5e135ff42888e9032a6c8e95caf8ae2750eeee58bbfacc246ac723    
+ENV AEROSPIKE_VERSION 3.7.5
+ENV AEROSPIKE_SHA256 9177bc49b732534371a27544adafa6792504b90ecb2e1992de7882ed7b221c32    
+ENV AEROSPIKE_TOOLS_VERSION 3.7.5
 
 # Install Aerospike
 RUN \
@@ -18,7 +19,7 @@ RUN \
   && dpkg -i aerospike/aerospike-server-*.deb \
 
   # download aerospike tools
-  && wget "http://www.aerospike.com/cgi/artifact.php?/download/tools/3.7.0/artifact/debian7" -O aerospike-tools.tgz \
+  && wget "http://www.aerospike.com/cgi/artifact.php?/download/tools/${AEROSPIKE_TOOLS_VERSION}/artifact/debian7" -O aerospike-tools.tgz \
   && mkdir aerospike-tools \
   && tar xzf aerospike-tools.tgz --strip-components=1 -C aerospike-tools \
   && dpkg -i aerospike-tools/aerospike-tools-*.deb \
