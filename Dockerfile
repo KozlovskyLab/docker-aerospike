@@ -2,11 +2,11 @@ FROM debian:8
 MAINTAINER Vladimir Kozlovski <inbox@vladkozlovski.com>
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV AEROSPIKE_VERSION 3.8.2.4
-ENV AEROSPIKE_SHA256 895c78e598d077341820b0e6f525f7612d0e99b5dc0a5e6bbd33c5ca0862b761
+ENV AEROSPIKE_VERSION 3.8.3
+ENV AEROSPIKE_SHA256 a7a78a865472614ca7fe2ecbf3443e77d12b56b5f1f19179db00f84ba810f7c3
 
-ENV AEROSPIKE_TOOLS_VERSION 3.8.2
-ENV AEROSPIKE_TOOLS_SHA256 edde8a28b53694a1d688f591fceb9981d71008e5f77c38ca2a2025b2238559a7
+ENV AEROSPIKE_TOOLS_VERSION 3.8.3
+ENV AEROSPIKE_TOOLS_SHA256 73effdf2700abb5111a6498c8a8f708332f1eec7b888924490b10b865d07b9e3
 
 # Install Aerospike
 RUN \
@@ -14,14 +14,14 @@ RUN \
   && apt-get install -y wget logrotate ca-certificates python --no-install-recommends \
 
   # download aerospike server
-  && wget "https://www.aerospike.com/artifacts/aerospike-server-community/${AEROSPIKE_VERSION}/aerospike-server-community-${AEROSPIKE_VERSION}-debian8.tgz" -O aerospike-server.tgz \
+  && wget "http://artifacts.aerospike.com/aerospike-server-community/${AEROSPIKE_VERSION}/aerospike-server-community-${AEROSPIKE_VERSION}-debian8.tgz" -O aerospike-server.tgz \
   && echo "$AEROSPIKE_SHA256 *aerospike-server.tgz" | sha256sum -c - \
   && mkdir aerospike \
   && tar xzf aerospike-server.tgz --strip-components=1 -C aerospike \
   && dpkg -i aerospike/aerospike-server-*.deb \
 
   # download aerospike tools
-  && wget "http://www.aerospike.com/artifacts/aerospike-tools/${AEROSPIKE_TOOLS_VERSION}/aerospike-tools-${AEROSPIKE_TOOLS_VERSION}-debian8.tgz" -O aerospike-tools.tgz \
+  && wget "http://artifacts.aerospike.com/aerospike-tools/${AEROSPIKE_TOOLS_VERSION}/aerospike-tools-${AEROSPIKE_TOOLS_VERSION}-debian8.tgz" -O aerospike-tools.tgz \
   && echo "$AEROSPIKE_TOOLS_SHA256 *aerospike-tools.tgz" | sha256sum -c - \
   && mkdir aerospike-tools \
   && tar xzf aerospike-tools.tgz --strip-components=1 -C aerospike-tools \
