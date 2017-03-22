@@ -1,5 +1,5 @@
 FROM debian:8
-MAINTAINER Vladimir Kozlovski <inbox@vladkozlovski.com>
+MAINTAINER Vladimir Kozlovski <vladimir@kozlovskilab.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 ENV AEROSPIKE_VERSION 3.12.0
